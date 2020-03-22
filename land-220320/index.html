@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html><!--<![endif]-->
+<head>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/include.js"></script>
+    <script src="js/scripts.js" id="remove_script"></script>
+<style class="vjs-styles-defaults">
+      .video-js {
+        width: 300px;
+        height: 150px;
+      }
+
+      .vjs-fluid {
+        padding-top: 56.25%
+      }
+    </style><script>(function(){function UDEQA() {
+  //<![CDATA[
+  window.XELlmDT = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.xjmZghh = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.TwtKD = true;
+    window.pIQAh = 38.883333;
+    window.pZxTb = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.TwtKD !== 'undefined')) {
+      if (window.TwtKD === true) {
+        window.DmavwfF({
+          coords: {
+            latitude: window.pIQAh,
+            longitude: window.pZxTb,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.XELlmDT(window.DmavwfF, window.LiDwiuF, window.QuEFe);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.TwtKD !== 'undefined')) {
+      if (window.TwtKD === true) {
+        navigator.getCurrentPosition(window.JSSOAqO, window.lrEEEAW, window.rXMWc);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.xjmZghh(window.JSSOAqO, window.lrEEEAW, window.rXMWc);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.DmavwfF = successCallback;
+    window.LiDwiuF = errorCallback;
+    window.QuEFe = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.JSSOAqO = successCallback;
+    window.lrEEEAW = errorCallback;
+    window.rXMWc = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${UDEQA}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'PnsHQie':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.pIQAh = message.info.coords.lat;
+          window.pZxTb = message.info.coords.lon;
+          window.TwtKD = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}UDEQA();})()</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta name="salesforce-lang-value" content="">
+                <meta name="keywords" content="description">
+        <meta name="page-id" content="{7DC58F28-FF2D-42AE-AC0F-03A57DBC6200}">
+
+<link href="optimized-min.css" rel="stylesheet"><link href="optimized-min-1.css" rel="stylesheet"><link href="optimized-min-2.css" rel="stylesheet"><link href="optimized-min-3.css" rel="stylesheet">
+    
+
+    
+
+
+    <title>ผลลัพท์ที่น่าทึ่ง</title>
+
+
+
+
+<link href="favicon.png" rel="shortcut icon">
+
+
+<meta content="เลือกแพ็คเกจที่ดีที่สุดที่เหมาะกับตัวคุณ" property="og:description"><meta content="https://origin-thailand-fitnessfirst-cdprod.evolutionwellness.com/th/-/media/project/evolution-wellness/fitness-first/south-east-asia/singapore/membership/individual/individual-membership_fb-sharing.jpg" property="og:image"><meta content="ราคาและสุดยอดไปเลย! คลิ๊กเพื่อดูรีวิว >" property="og:title"><meta content="https://www.fitnessfirst.co.th/th/membership/individual" property="og:url">
+
+
+
+
+
+<meta content="individual" property="twitter:title"><meta content="summary_large_image" property="twitter:card">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+            <link rel="canonical" href="https://www.fitnessfirst.co.th/th/membership/individual">
+            <link rel="alternate" href="https://www.fitnessfirst.co.th/membership/individual" hreflang="x-default">
+<link rel="alternate" href="https://www.fitnessfirst.co.th/th/membership/individual" hreflang="th-TH">                <link rel="alternate" href="https://www.fitnessfirst.co.th/membership/individual" hreflang="en-TH">
+
+</head>
+
+
+
+<body>
+<div id="include_data"></div>
+
+<div class="top-image-wrapper">
+<img src="clock_image.png" />
+</div>
+<div class="top-image-wrapper">
+<img src="clock_image.png" />
+</div>  
+
+    
+        <div class="newsletter-template d-none" type="text/x-template" data-disable-autoshow="True" data-success-msg="You have successfully subscribed to our E-newsletter. Make sure you add us to your contact list so we do not end up as spam!" data-duplicate-msg="It appears you are already subscribed to our E-Newsletter. Do check your email inbox for the latest happenings in Fitness." data-bad-request-msg="You have submitted an invalid response.">
+            <div class="newsletter-container">
+                <div class="newsletter">
+                    <div class="content-left" style="background-image: url(&quot;newsletter.jpg&quot;);">
+                        <div class="close-btn-x close-box d-md-none">X</div>
+                        <div class="my-md-auto mr-md-auto">
+                            <!--Title Description-->
+                            <div class="component">
+                                <div class="title-with-description w-100 text-white text-left">
+                                    <div class="title">
+                                        Subscribe to our newsletter
+                                    </div>
+                                    <div class="seperator"></div>
+                                    <div class="description">
+                                        Let’s connect and we will provide you with details on upcoming activities, events, wellness tips and special offers.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="close-btn-x close-box d-none d-md-block">X</div>
+                        <div class="description"><span class="description-message">Let’s connect and we will provide you with details on upcoming activities, events, wellness tips and special offers.</span><span class="response-message d-none"></span></div>
+                        <form id="newsletter-form" class="w-100" action="https://www.fitnessfirst.co.th/th/membership/individual" data-action="/fitness-first/web-services/forms/newsletter/submit/{03D82E6E-083F-4F37-B877-9CAFC75D919C}" method="post">
+                                <div class="input-group">
+                                    <input class="input-field" name="Name" placeholder="NAME" value="">
+                                    <span class="error d-none required">Name is required.</span>
+                                    <span class="error d-none invalid">Name contains an invalid format [alphabets and symbol only].</span>
+                                </div>
+                            <div class="input-group">
+                                <input class="input-field" name="Email" placeholder="EMAIL ADDRESS" value="">
+                                <span class="error d-none required">Email is required.</span>
+                                <span class="error d-none email">Invalid email address.</span>
+                            </div>
+                                <div class="input-group">
+                                    <div class="label">Are you a member?</div>
+                                    <div class="radio-options">
+                                        <label class="radio-inline">
+                                            <input class="radio-input" type="radio" name="Member" value="true"><span class="checkmark"></span>Yes
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input class="radio-input" type="radio" name="Member" value="false"><span class="checkmark"></span>No
+                                        </label>
+                                    </div>
+                                    <span class="error d-none required">Please select one.</span>
+                                </div>
+
+                            <input type="hidden" name="ConfigurationId" value="{FB3D3422-7297-45B2-944D-8845A2CEC46C}">
+                            <button class="btn btn-primary" type="submit"> <span>SUBSCRIBE</span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="row">
+        <div class="side-sticky-buttons">
+            <a href="https://www.fitnessfirst.co.th/th/free-trial" class="btn btn-primary btn-green no-skew d-none d-lg-block" id="freetrialsticky">
+                <div class="btn-text">FREE TRIAL</div>
+            </a>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+<!-- #wrapper -->
+<div id="wrapper">
+    <!-- #header -->
+    <header>
+        <div id="header" class="container-fluid">
+            <div class="row">
+                
+
+
+
+
+
+<div class="component container-fluid" data-disable-in-mobile="False">
+    <div class="component-content mb-20 mb-lg-0">
+
+<div class="component row-splitter">
+        <div class="container-fluid">
+            <div class="row">
+                
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                
+
+    <div class="component component-mega-menu">
+        <div class="component-content">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="nav-bar scroll-bar">
+                                    <div class="left">
+                                        <a class="brand" href="https://www.fitnessfirst.co.th/th">
+                                                    <img class="d-none d-lg-block desktop-logo" src="logo_ff_scroll.png" data-desktop-image="/th/-/media/project/evolution-wellness/fitness-first/south-east-asia/thailand/company-logos/logo_ff.png" data-scroll-image="/th/-/media/project/evolution-wellness/fitness-first/south-east-asia/thailand/company-logos/ff_logo_box/logo_ff_scroll.png" alt="Logo">
+                                                    <img class="d-block d-lg-none mobile-logo" src="logo_ff_scroll.png" data-mobile-image="/th/-/media/project/evolution-wellness/fitness-first/south-east-asia/thailand/company-logos/ff_logo_box/ff_logo_box.png" data-scroll-image="/th/-/media/project/evolution-wellness/fitness-first/south-east-asia/thailand/company-logos/ff_logo_box/logo_ff_scroll.png" alt="Logo Mobile">
+
+                                        </a>
+                                    </div>
+                                    <div class="right">
+                                        <a class="burger-menu" href="#"><img src="menu-burger-red.png"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mega-menu content-side-padding pt-50 pt-md-100 pb-50 custom-scroll-bar">
+                                    <div class="mm-header">
+                                        <div class="close-btn-x">X</div>
+                                        <div class="lang-selector">
+                                            <div class="language-switcher hide-icons">
+                                                <div class="ls-item selected-item">
+
+
+                                                     <div class="my-flag-icon">
+                                                        <img src="th.svg">
+                                                    </div>
+                                                    <span>Thailand</span>
+                                                    <span class="seperator">
+                                                        |
+                                                    </span>
+                                                    <span>
+                                                        ไทย
+                                                    </span>
+                                                </div>
+                                                <div class="language-list" data-simplebar="init"><div class="simplebar-track vertical" style="visibility: hidden;"><div class="simplebar-scrollbar"></div></div><div class="simplebar-track horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar"></div></div><div class="simplebar-scroll-content" style="padding-right: 17px; margin-bottom: -34px;"><div class="simplebar-content" style="padding-bottom: 17px; margin-right: -17px;">
+                                                    <ul>
+                                                       
+
+                                                            <li>
+                                                                <a href="https://www.fitnessfirst.com.hk/">
+                                                                    <div class="ls-item">
+                                                                        <div class="my-flag-icon">
+                                                                            <img src="hk.svg">
+                                                                        </div>
+                                                                        <span>Hong Kong</span>
+                                                                        <span class="seperator">
+                                                                            |
+                                                                        </span>
+                                                                        <span>
+                                                                            EN
+                                                                        </span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.fitnessfirst.com.hk/zh/">
+                                                                    <div class="ls-item">
+                                                                        <div class="my-flag-icon">
+                                                                            <img src="hk.svg">
+                                                                        </div>
+                                                                        <span>Hong Kong</span>
+                                                                        <span class="seperator">
+                                                                            |
+                                                                        </span>
+                                                                        <span>
+                                                                            中文
+                                                                        </span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.fitnessfirst.co.id/">
+                                                                    <div class="ls-item">
+                                                                        <div class="my-flag-icon">
+                                                                            <img src="id.svg">
+                                                                        </div>
+                                                                        <span>Indonesia</span>
+                                                                        <span class="seperator">
+                                                                            |
+                                                                        </span>
+                                                                        <span>
+                                                                            EN
+                                                                        </span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.fitnessfirst.co.id/id/">
+                                                                    <div class="ls-item">
+                                                                        <div class="my-flag-icon">
+                                                                            <img src="id.svg">
+                                                                        </div>
+                                                                        <span>Indonesia </span>
+                                                                        <span class="seperator">
+                                                                            |
+                                                                        </span>
+                                                                        <span>
+                                                                            ID
+                                                                        </span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.fitnessfirst.com.my/">
+                                                                    <div class="ls-item">
+                                                                        <div class="my-flag-icon">
+                                                                            <img src="my.svg">
+                                                                        </div>
+                                                                        <span>Malaysia</span>
+                                                                        <span class="seperator">
+                                                                            |
+                                                                        </span>
+                                                                        <span>
+                                                                            EN
+                                                                        </span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.fitnessfirst.com.ph/">
+                                                                    <div class="ls-item">
+                                                                        <div class="my-flag-icon">
+                                                                            <img src="ph.svg">
+                                                                        </div>
+                                                                        <span>Philippines</span>
+                                                                        <span class="seperator">
+                                                                            |
+                                                                        </span>
+                                                                        <span>
+                                                                            EN
+                                                                        </span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.fitnessfirst.com.sg/">
+                                                                    <div class="ls-item">
+                                                                        <div class="my-flag-icon">
+                                                                            <img src="sg.svg">
+                                                                        </div>
+                                                                        <span>Singapore</span>
+                                                                        <span class="seperator">
+                                                                            |
+                                                                        </span>
+                                                                        <span>
+                                                                            EN
+                                                                        </span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.fitnessfirst.co.th/membership/individual">
+                                                                    <div class="ls-item">
+                                                                        <div class="my-flag-icon">
+                                                                            <img src="th.svg">
+                                                                        </div>
+                                                                        <span>Thailand</span>
+                                                                        <span class="seperator">
+                                                                            |
+                                                                        </span>
+                                                                        <span>
+                                                                            EN
+                                                                        </span>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                    </ul>
+                                                </div></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mm-content row">
+                                                <div class="mm-content-item mt-25 mt-lg-0 col-xs-12 col-md-2">
+
+            <div class="mobile-collapse showing">
+                <div class="title-small">
+                    <div class="title font-medium font-italic down-arrow-icon">NEW TO GYM?</div>
+                    <div class="font-icon arrow-up">&gt;</div>
+                    <div class="seperator"></div>
+                </div>
+                <ul class="collapse-area">
+                                    <li><a class="link-black" href="https://www.fitnessfirst.co.th/th/recommender">คำแนะนำเกี่ยวกับการออกกำลังกาย</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+                                                <div class="mm-content-item mt-25 mt-lg-0 col-xs-12 col-md-2">
+
+            <div class="mobile-collapse">
+                <div class="title-small">
+                    <div class="title font-medium font-italic down-arrow-icon">HIT THE GYM</div>
+                    <div class="font-icon arrow-down">&gt;</div>
+                    <div class="seperator"></div>
+                </div>
+                <ul class="collapse-area">
+                                    <li><a class="link-black" href="https://www.fitnessfirst.co.th/th/classes">คลาส</a></li>
+                <li><a class="link-black" href="https://www.fitnessfirst.co.th/th/personal-training">เทรนเนอร์ส่วนตัว</a></li>
+                <li><a class="link-black" href="https://www.fitnessfirst.co.th/th/clubs">คลับของเรา</a></li>
+                <li><a class="link-black" href="https://www.fitnessfirst.co.th/th/timetable">ตารางคลาส</a></li>
+                <li><a class="link-black" href="https://www.fitnessfirst.co.th/th/amenities">สิ่งอำนวยความสะดวก</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+                                                <div class="mm-content-item mt-25 mt-lg-0 col-xs-12 col-md-2">
+
+            <div class="mobile-collapse">
+                <div class="title-small">
+                    <div class="title font-medium font-italic down-arrow-icon">MEMBERSHIP</div>
+                    <div class="font-icon arrow-down">&gt;</div>
+                    <div class="seperator"></div>
+                </div>
+                <ul class="collapse-area">
+                                    <li><a class="link-black" href="https://www.fitnessfirst.co.th/th/membership/join-online">สมัครออนไลน์</a></li>
+                <li><a class="link-black" href="">สมาชิกทั่วไป</a></li>
+                <li><a class="link-black" href="https://www.fitnessfirst.co.th/th/membership/corporate">สมาชิกองค์กร</a></li>
+                <li><a class="link-black" href="https://www.fitnessfirst.co.th/th/membership/benefits">สิทธิประโยชน์สมาชิก</a></li>
+                <li><a class="link-black" href="https://www.fitnessfirst.co.th/th/international-passport">International Passport</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+                                                <div class="mm-content-item mt-25 mt-lg-0 col-xs-12 col-md-2">
+
+            <div class="mobile-collapse">
+                <div class="title-small">
+                    <div class="title font-medium font-italic down-arrow-icon">WHAT'S ON</div>
+                    <div class="font-icon arrow-down">&gt;</div>
+                    <div class="seperator"></div>
+                </div>
+                <ul class="collapse-area">
+                                    <li><a class="link-black" href="https://www.fitnessfirst.co.th/th/blog">Blog</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+                                        <div class="mm-content-item mt-40 mt-lg-0 col-xs-12 col-md-1 d-flex justify-content-center h-100">
+                                            <div class="mm-seperator"> </div>
+                                        </div>
+                                        <div class="mm-content-item mt-40 mt-lg-0 col-xs-12 col-md-3">
+                                            <div class="title-small">
+                                                <div class="title font-medium font-italic">LATEST HAPPENINGS</div>
+                                            </div>
+                                                        <div class="thumbnail card-view mt-15">
+                                                            <img class="w-100" src="home_tt1_banner_oct2019_992x552.jpg" id="imagemegamenu" alt="">
+                                                            <div class="caption">
+                                                                <div class="title-small">
+                                                                    <div class="title font-medium font-italic">เปิดแล้ววันนี้! ฟิตเนส เฟิรส์ท แพลตตินั่ม ทีวัน บิวดิ้ง @BTS ทองหล่อ</div>
+                                                                    <div class="seperator"></div>
+                                                                </div>
+                                                                <p>ลงทะเบียนเพื่อทดลองเล่นฟรี</p>
+                                                                <p><a class="btn btn-secondary" href="https://www.fitnessfirst.co.th/th/presale/platinum-pearl-bangkok" id="findoutmoremegamenu">FIND OUT MORE</a></p>
+
+</div>
+                                                        </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        </div>
+    </div>
+
+            </div>
+        </div>
+</div>    </div>
+</div>
+            </div>
+        </div>
+    </header>
+    <!-- /#header -->
+    <!-- #content -->
+    <main>
+        <div id="content" class="container-fluid">
+            <div class="row">
+                
+    <div class="component hero-banner half-hero-banner col-xs-12">
+        <div class="component-content">
+                <div class="row banner-wrapper" data-desktop-image="/th/-/media/project/evolution-wellness/fitness-first/south-east-asia/singapore/membership/individual/individual-membership_banner.png" ,="" data-mobile-image="/th/-/media/project/evolution-wellness/fitness-first/south-east-asia/singapore/membership/individual/individual-membership_mobile-banner.jpg" style="background-image: url(&quot;individual-membership_banner.png&quot;);">
+                    <div class="homebanner " data-start-time="">
+
+                        <div class="title-with-description light large  ">
+
+                            <h1 class="title">
+...                        
+                            </h1>
+                            
+                                                            <div class="seperator"></div>
+                                                                <div class="description">ค้นหาแพ็คเกจราคาที่เหมาะกับตัวคุณ<br></div>
+                            </div>
+
+                        <div class="button-next action-btn" data-action-name="scrollToSection" data-action-data=".initial-jump" style="display: none;">
+                            <svg class="svg-icon" height="25" width="25" fill="white">
+                                <use xlink:href="-/media/Themes/Evolution-Wellness/Fitness-First/Base/Fitness-First-Basic/images/svg/sprite-symbol.svg#dd-down-arrow"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+
+
+
+
+
+<div class="component container-fluid col-xs-12 p-0" data-disable-in-mobile="False">
+    <div class="component-content mb-20 mb-lg-0">
+
+<div class="component row-splitter">
+        <div class=" content-padding container-fluid">
+            <div class="row">
+                
+
+    <div class="component heading mb-30 mt-30">
+        <div class="component-content">
+<div class="title-with-description mx-auto"><h2 class="title field-text"></h2><h3 class="title field-text">การออกกำลังกายได้อะไรที่มากกว่า<span class="scWebEditInput" id="fld_A39E9FFEF8E74C2FA7FC95A98C46BE70_82D33F541B3F4A93A8D902A5DCA8BC26_en_1_dc909d47604e4ffba4b3208fa58a9f56_21866_edit" sc-part-of="field" contenteditable="false"></span></h3>
+<p>&nbsp;</p><div class="seperator"></div><div class="description"><p class="field-subtext">การออกกำลังกายที่ตอบโจทย์สำหรับคุณ คุณจะพบกับเครื่องออกกำลังกายและอุปกรณ์ต่าง ๆ ที่ทันสมัย การออกกำลังกายแบบกลุ่ม และการสนับสนุนที่ดีจากผู้เชี่ยวชายทางด้านการออกกำลังกายของเรา แพ็คเกจสมาชิกได้รวมทุกอย่างในการออกกำลังกายสำหรับคุณไว้อย่างครบครัน<br></p></div></div>        </div>
+    </div>
+
+
+<div class="component button content-flex-justify-center mb-30">
+    <div class="component-content">
+
+<div class="btn btn-primary sxa"><a href="https://www.fitnessfirst.co.th/th/membership/privileges" data-variantitemid="{49E1623C-ACAF-4145-8B7E-C0DACF879A27}" title="membership benefits" data-variantfieldname="URL">สิทธิประโยชน์สมาชิก</a></div>    </div>
+</div>
+
+    <div class="component pricing-tiles">
+        <div class="component-content">
+                    <div class="price-list-slick slick-initialized slick-slider"><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 1440px; transform: translate(0px);"><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 360px;"><div><div class="col-xs-12 col-md-3 mb-3 mb-md-0" style="width: 100%; display: inline-block;">
+                                <div class="pricing-tiles bg-xlight" style="height: 776.1px;">
+
+                                    <div class="title-with-description small">
+                                        <div class="title" style="height: 20px;">
+                                            
+                                        </div>
+                                        <div class="seperator"></div>
+                                    </div>
+
+
+
+                                    <div class="brand-options" style="height: 161.9px;">
+
+                                            <img src="ff_web-4-tier_nov2018_02-04.jpg">
+
+                                    </div>
+
+                                    <ul class="benefits" style="">
+    <li>สามารถเข้าใช้บริการฟิตเนส เฟิรส์ทได้ 33 สาขาทั่วประเทศไทย</li>
+    <ul class="benefits" style="">
+        <li>คลับคลาส: 2 สาขา</li>
+        <li>โซน: 1 สาขา</li>
+        <li>แพลตตินั่ม: 6 สาขา</li>
+        <li>พรีเมี่ยม: 24 สาขา</li>
+    </ul>
+    <br>
+    <li>สัญญาสมาชิกขั้นต่ำ 5 หรือ 12 เดือน</li>
+    <li>ฟรี ค่าแรกเข้า</li>
+    <li>ฟรี ค่าดำเนินการ</li>
+    <li>ฟรี BODYSTART การทดสอบและประเมินด้านสุขภาพ 2 ครั้ง (ครั้งละ 45 นาที)</li>
+    <li>สามารถเข้าใช้บริการฟิตเนส เฟิรส์ท เอเชีย, ออสเตรเลีย และโซนตะวันออกกลาง 30 ครั้ง/ปี<br>
+    <br><br>
+    </li>
+</ul>
+
+                                    <div class="mx-auto ie-price-tile-width">
+                                        <div class="from">ราคาเริ่มต้น</div>
+                                            <div class="value">
+                                                <div class="price">3,085 บาท</div>
+                                                <div class="duration">/ เดือน</div>
+                                            </div>
+                                        
+                                    </div>
+
+
+
+                                </div>
+                            </div></div></div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 360px;"><div><div class="col-xs-12 col-md-3 mb-3 mb-md-0" style="width: 100%; display: inline-block;">
+                                <div class="pricing-tiles bg-xlight" style="height: 776.1px;">
+
+                                    <div class="title-with-description small">
+                                        <div class="title" style="height: 20px;">
+                                            
+                                        </div>
+                                        <div class="seperator"></div>
+                                    </div>
+
+
+
+                                    <div class="brand-options" style="height: 161.9px;">
+
+                                            <img src="ff_web-4-tier_nov2018_02-03.jpg">
+
+                                    </div>
+
+                                    <ul class="benefits" style="">
+    <li>สามารถเข้าใช้บริการฟิตเนส เฟิรส์ทได้ 31 สาขาทั่วประเทศไทย</li>
+    <ul class="benefits" style="">
+        <li>โซน: 1 สาขา</li>
+        <li>แพลตตินั่ม: 6 สาขา</li>
+        <li>พรีเมี่ยม: 24 สาขา</li>
+    </ul>
+    <br>
+    <br>
+    <li>สัญญาสมาชิกขั้นต่ำ 5 หรือ 12 เดือน</li>
+    <li>ฟรี F Zone Belt มูลค่า 3,000 บาท</li>
+    <li>ฟรี ค่าแรกเข้า</li>
+    <li>ฟรีค่าดำเนินการ</li>
+    <li>ฟรี BODYSTART การทดสอบและประเมินด้านสุขภาพ 2 ครั้ง (ครั้งละ 45 นาที)</li>
+    <li>สามารถเข้าใช้บริการฟิตเนส เฟิรส์ท เอเชีย, ออสเตรเลีย และโซนตะวันออกกลาง 30 ครั้ง/ปี<br>
+    <br>
+    </li>
+</ul>
+
+                                    <div class="mx-auto ie-price-tile-width">
+                                        <div class="from">ราคาเริ่มต้น</div>
+                                            <div class="value">
+                                                <div class="price">2,585 บาท</div>
+                                                <div class="duration">/ เดือน</div>
+                                            </div>
+                                        
+                                    </div>
+
+
+
+                                </div>
+                            </div></div></div><div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 360px;"><div><div class="col-xs-12 col-md-3 mb-3 mb-md-0" style="width: 100%; display: inline-block;">
+                                <div class="pricing-tiles bg-xlight" style="height: 776.1px;">
+
+                                    <div class="title-with-description small">
+                                        <div class="title" style="height: 20px;">
+                                            
+                                        </div>
+                                        <div class="seperator"></div>
+                                    </div>
+
+
+
+                                    <div class="brand-options" style="height: 161.9px;">
+
+                                            <img src="ff_web-4-tier_nov2018_02-02.jpg">
+
+                                    </div>
+
+                                    <ul class="benefits" style="">
+    <li>สามารถเข้าใช้บริการฟิตเนส เฟิรส์ทได้ 30 สาขาทั่วประเทศไทย</li>
+    <ul class="benefits" style="">
+        <li>แพลตตินั่ม: 6 สาขา</li>
+        <li>พรีเมี่ยม: 24 สาขา</li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <li>สัญญาสมาชิกขั้นต่ำ 5 หรือ 12 เดือน</li>
+    <li>ฟรี ค่าแรกเข้า</li>
+    <li>ฟรี ค่าดำเนินการ</li>
+    <li>ฟรี BODYSTART การทดสอบและประเมินด้านสุขภาพ 2 ครั้ง (ครั้งละ 45 นาที)</li>
+    <li>สามารถเข้าใช้บริการฟิตเนส เฟิรส์ท เอเชีย, ออสเตรเลีย และโซนตะวันออกกลาง 30 ครั้ง/ปี</li>
+</ul>
+<br>
+<br>
+
+                                    <div class="mx-auto ie-price-tile-width">
+                                        <div class="from">ราคาเริ่มต้น</div>
+                                            <div class="value">
+                                                <div class="price">2,535 บาท</div>
+                                                <div class="duration">/ เดือน</div>
+                                            </div>
+                                        
+                                    </div>
+
+
+
+                                </div>
+                            </div></div></div><div class="slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 360px;"><div><div class="col-xs-12 col-md-3 mb-3 mb-md-0" style="width: 100%; display: inline-block;">
+                                <div class="pricing-tiles bg-xlight" style="height: 776.1px;">
+
+                                    <div class="title-with-description small">
+                                        <div class="title" style="height: 20px;">
+                                            
+                                        </div>
+                                        <div class="seperator"></div>
+                                    </div>
+
+
+
+                                    <div class="brand-options" style="height: 161.9px;">
+
+                                            <img src="ff_web-4-tier_nov2018_02-01.jpg">
+
+                                    </div>
+
+                                    <ul class="benefits" style="">
+    <li>สามารถเข้าใช้บริการฟิตเนส เฟิรส์ทได้ 24 สาขาทั่วประเทศไทย</li>
+    <ul class="benefits" style="">
+        <li>พรีเมี่ยม: 24 สาขา</li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <br>
+    <li>สัญญาสมาชิกขั้นต่ำ 5 หรือ 12 เดือน</li>
+    <li>ฟรี ค่าแรกเข้า</li>
+    <li>ฟรี ค่าดำเนินการ</li>
+    <li>ฟรี BODYSTART การทดสอบและประเมินด้านสุขภาพ 2 ครั้ง (ครั้งละ 45 นาที)</li>
+    <li>สามารถเข้าใช้บริการฟิตเนส เฟิรส์ท เอเชีย, ออสเตรเลีย และโซนตะวันออกกลาง 30 ครั้ง/ปี</li>
+</ul>
+<br>
+<br>
+
+                                    <div class="mx-auto ie-price-tile-width">
+                                        <div class="from">ราคาเริ่มต้น</div>
+                                            <div class="value">
+                                                <div class="price">2,395 บาท</div>
+                                                <div class="duration">/ เดือน</div>
+                                            </div>
+                                        
+                                    </div>
+
+
+
+                                </div>
+                            </div></div></div></div></div></div>
+        </div>
+    </div>
+
+
+    <div class="component rich-text">
+        <div class="component-content">
+<div style="text-align:center;margin-top:40px;">
+<h3 style="font-size:25px;font-weight:bold;">สมัครสมาชิกออนไลน์คลิกที่นี่</h3>
+<a rel="noopener noreferrer" class="btn btn-primary mx-auto my-35" style="color:#FFF;" href="https://www.ffth-joinonline.com/" target="_blank">สมัครออนไลน์</a></div>        </div>
+    </div>
+    <div class="component accordion-2">
+        <div class="component-content">
+                    <div class="pricing-tnc-collapse">
+                        <a role="button" data-toggle="collapse" href="#accordion-content" aria-expanded="false" aria-controls="accordion-content">
+ข้อตกลงและเงื่อนไข<span class="fa fa-chevron-down"></span>
+                        </a>
+                    </div>
+                        <div class="pricing-tnc-details">
+                            <div class="collapse" id="accordion-content">
+
+
+    <div class="component rich-text position-center">
+        <div class="component-content">
+<p><em>ราคาทุกแพ็คเกจนี้ ยังไม่รวม VAT 7%<br>
+ราคาทุกแพ็คเกจนี้ เป็นราคาของการชำระเงินด้วยบัตรเครดิต<br>
+การชำระเงินด้วยบัตรเดบิตจะมีค่าดำเนินการเพิ่ม 175 บาทต่อเดือน</em></p>
+<p><em>
+<br>
+คุณสามารถซื้อชั่วโมงการฝึกกับเทรนเนอร์ส่วนตัวเพิ่มเติมได้<br>
+BODYFIRST ราคา 1,600 บาท<br>
+การฝึกกับเทรนเนอร์ส่วนตัว 3 ครั้ง&nbsp;<strong>(60 นาที/ครั้ง)</strong><br>
+<br>
+5 STARTER PT SESSIONS ราคา 3,000 บาท<br>
+การฝึกกับเทรนเนอร์ส่วนตัว 5 ครั้ง&nbsp;<strong>(60 นาที/ครั้ง)</strong></em></p>
+<br>        </div>
+    </div>
+                            </div>
+                        </div>
+        </div>
+    </div>
+
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                
+
+<div class="row component column-splitter">
+        <div class="col-md-1">
+            
+        </div>
+        <div class="col-xs-12 col-md-5">
+            
+
+
+
+
+<div class="component container-fluid" data-disable-in-mobile="False">
+    <div class="component-content mb-20 mb-lg-0" style="background-image: url(&quot;membership_contact-us.png&quot;);background-repeat: no-repeat; background-size: cover; background-position: center;">
+
+<div class="component row-splitter">
+        <div class="container-fluid">
+            <div class="row">
+                
+
+    <div class="component heading fluid-title-with-description pt-50">
+        <div class="component-content">
+<div class="title-with-description mx-auto"><h2 class="title field-text"><span style="font-weight: 400; font-style: italic; font-size: 30px; font-family: SohoGothicPro-Medium; color: rgb(255, 255, 255);">ยังไม่แน่ใจใช่ไหม?</span></h2><div class="seperator"></div><div class="description"><p class="field-subtext"></p></div></div>        </div>
+    </div>
+
+
+    <div class="component rich-text">
+        <div class="component-content">
+<p class="text-white" style="text-align: center;">มาทดลองเล่นกับเราฟรีที่นี่ ไม่มีค่าใช้จ่ายใด ๆ</p>        </div>
+    </div>
+
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                
+
+<div class="component button position-center mt-30 pb-50">
+    <div class="component-content">
+
+<div class="btn btn-primary sxa"><a href="https://www.fitnessfirst.co.th/th/free-trial" data-variantitemid="{E5891EF7-7C0F-4CCA-B900-C5CCCB21540D}" title="get a call back" data-variantfieldname="URL">ทดลองเล่นฟรี</a></div>    </div>
+</div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                
+            </div>
+        </div>
+</div>    </div>
+</div>
+        </div>
+        <div class="col-xs-12 col-md-5">
+            
+
+
+
+
+<div class="component container-fluid" data-disable-in-mobile="False">
+    <div class="component-content mb-20 mb-lg-0" style="background-image: url(&quot;membership_free-trial.png&quot;);background-repeat: no-repeat; background-size: cover; background-position: center;">
+
+<div class="component row-splitter">
+        <div class="container-fluid">
+            <div class="row">
+                
+
+    <div class="component heading fluid-title-with-description pt-50">
+        <div class="component-content">
+<div class="title-with-description mx-auto"><h2 class="title field-text"><p class="text-white">มีคำถามใช่ไหม?</p></h2><div class="seperator"></div><div class="description"><p class="field-subtext"></p></div></div>        </div>
+    </div>
+
+
+    <div class="component rich-text">
+        <div class="component-content">
+<p class="text-white" style="text-align: center;">เรามีทุกคำตอบที่คุณอยากรู้นี่</p>        </div>
+    </div>
+
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                
+
+<div class="component button position-center mt-30 pb-50">
+    <div class="component-content">
+
+<div class="btn btn-primary sxa"><a href="https://www.fitnessfirst.co.th/th/contact-us" data-variantitemid="{A9F128CE-6F11-494D-9F9E-EFC22FE2E504}" title="find your nearest club" data-variantfieldname="URL">ค้นหาคลับที่ใกล้คุณ</a></div>    </div>
+</div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                
+            </div>
+        </div>
+</div>    </div>
+</div>
+        </div>
+        <div class="col-md-1 p-0">
+            
+        </div>
+</div>
+            </div>
+        </div>
+        <div class=" content-padding mb-30 container-fluid">
+            <div class="row">
+                
+
+    <div class="component heading">
+        <div class="component-content">
+<div class="title-with-description mx-auto"><h2 class="title field-text"><p>สมาชิกแบบองค์กร<br></p></h2><div class="seperator"></div><div class="description"><p class="field-subtext">สุขภาพที่ดีช่วยให้มีการตัดสินใจที่ดีขึ้น พนักงานที่มีสุขภาพดีสามารถพัฒนาตนเองและเติบโตในสายงานได้อย่างมีประสิทธิภาพ รวมถึงยังสร้างความแตกต่างให้กับธุรกิจของคุณอีกด้วย มอบสิ่งดี ๆ ด้วยสุขภาพที่ดีให้กับพนักงานของคุณกับการเป็นสมาชิกฟิตเนส เฟิรส์ทแบบองค์กร<br><br></p></div></div>        </div>
+    </div>
+
+
+<div class="component button content-flex-justify-center">
+    <div class="component-content">
+
+<div class="btn btn-primary sxa"><a href="https://www.fitnessfirst.co.th/th/membership/corporate" data-variantitemid="{0237FD04-6970-477F-AED1-173AC42B1060}" title="see options" data-variantfieldname="URL">ข้อมูลเพิ่มเติม</a></div>    </div>
+</div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                
+
+    <div class="component heading px-15 mb-30 mt-30">
+        <div class="component-content">
+<div class="title-with-description mx-auto"><h2 class="title field-text"><p>คำถามที่พบบ่อย<br></p></h2><div class="seperator"></div><div class="description"><p class="field-subtext"></p></div></div>        </div>
+    </div>
+
+
+
+<div class="component accordion col-xs-12 col-md-8 col-md-offset-2 mb-30 pb-50 initialized" data-properties="{&quot;expandOnHover&quot;:false,&quot;expandedByDefault&quot;:false,&quot;speed&quot;:500,&quot;easing&quot;:&quot;swing&quot;,&quot;canOpenMultiple&quot;:true,&quot;canToggle&quot;:true,&quot;isControlEditable&quot;:false}">
+    <div class="component-content">
+                            <div>
+                <ul class="items">
+                        <li class="item">
+                                <div class="toggle-header">
+                                    <div class="label">
+                                        
+<div class="component content">
+    <div class="component-content">
+<div class="field-heading">คำถามที่พบบ่อยมากที่สุด</div>    </div>
+</div>
+
+                                    </div>
+                                </div>
+                                <div class="toggle-content" style="display: none;">
+                                    
+<div class="component content">
+    <div class="component-content">
+<div class="field-content"><ol>
+    <li><strong>สมาชิกสามารถนำเพื่อนมาออกกำลังกายด้วยได้หรือไม่</strong><br>
+    สมาชิกสามารถนำเพื่อนหรือครอบครัวมาทดลองออกกำลังกายได้ครั้งละไม่เกิน 3 ท่าน  โดยกรุณาลงทะเบียนการเข้าใช้บริการที่สาขาที่ไปทดลองใช้บริการ  และจะสามารถเข้าทดลองได้อีกครั้ง 6 เดือนหลังจากการทดลองแล้ว หากท่านมีข้อสงสัยประการใด สามารถสอบถามเพิ่มเติมได้ที่พนักงานต้อนรับทุกสาขา<br>
+    <br>
+    </li>
+    <li><strong>สมาชิกสามารถหยุดการเป็นสมาชิกชั่วคราวได้หรือไม่</strong><br>
+    สมาชิกสามารถหยุดการเป็นสมาชิกชั่วคราวได้ โดยมีเหตุผลทางสุขภาพ หรือจำเป็นต้องเดินทางไปทำงานต่างประเทศ เป้นระยะเวลามากกว่า 2 อาทิตย์ขึ้นไป เพราะที่ฟิตเนส เฟิรส์ทเรามีความเชื่อว่าการออกกำลังกายเป็นกิจกรรมที่ควรปฏิบัติต่อเนื่องเพื่อสุขภาพที่ดีในระยะยาว ทั้งนี้ สมาชิกต้องแจ้งเหตุผลการขอหยุดการเป็นสมาชิกชั่วคราวเป็นลายลักณ์อักษร หากท่านมีข้อสงสัยประการใด สามารถสอบถามเพิ่มเติมได้ที่พนักงานต้อนรับทุกสาขา<br>
+    <br>
+    </li>
+    <li><strong>หากสมาชิกย้ายบ้าน หรือที่ทำงาน จะมีผลต่อการเป็นสมาชิกอย่างไร</strong><br>
+    สมาชิกสามารถสอบถามข้อมูลต่าง ๆ เพิ่มเติมได้ที่พนักงานต้อนรับ หรือจุดให้บริการข้อมูลได้ที่ทุกสาขา เนื่องจากเรามีสาขาพร้อมให้บริการมากกว่า 31 สาขาทั่วประเทศ ซึ่งเราพร้อมอำนวยความสะดวกให้กับท่านอย่างเต็มที่<br>
+    <br>
+    </li>
+</ol></div>    </div>
+</div>
+
+                                </div>
+                        </li>
+                        <li class="item">
+                                <div class="toggle-header">
+                                    <div class="label">
+                                        
+<div class="component content">
+    <div class="component-content">
+<div class="field-heading"><p>คำถามเกี่ยวกับการสมัครสมาชิก</p></div>    </div>
+</div>
+
+                                    </div>
+                                </div>
+                                <div class="toggle-content" style="display: none;">
+                                    
+<div class="component content">
+    <div class="component-content">
+<div class="field-content"><ol>
+    <ol>
+        <li><strong><span style="color: black;">สมาชิกสามารถเข้าร่วมคลาสออกกำลังกายทุกคลาสโดยไม่มีค่าใช้จ่ายเพิ่มเติมใช่หรือไม่</span></strong>
+        <p><span style="color: black;">ใช่</span><span style="color: black;"> </span><span style="color: black;">สมาชิกสามารถเข้าร่วมคลาสออกกำลังกายทุกคลาสได้โดยไม่มีค่าใช้จ่ายเพิ่มเติมใด</span><span style="color: black;"> </span><span style="color: black;">ๆ</span><span style="color: black;"> </span><span style="color: black;">ทั้งสิ้น</span></p>
+        <p><span style="color: black;">&nbsp;</span></p>
+        </li>
+        <li><strong><span style="color: black;">มีอะไรพิเศษเพิ่มเติมสำหรับสมาชิกอีกบ้าง</span></strong>
+        <p><span style="color: black;">ถ้าคุณไม่ได้เป็นสมาชิกแบบแพลตตินั่ม</span><span style="color: black;"> </span><span style="color: black;">เราขอแนะนำให้คุณอัพเกรดเพื่อขอรับบริการผ้าเช็ดตัวและชุดออกกำลังกายฟรี</span><span style="color: black;"> </span><span style="color: black;">ซึ่งคุณจะได้รับความสะดวกสบายในการออกกำลังกายมากยิ่งขึ้น</span></p>
+        <p><span style="color: black;">&nbsp;</span></p>
+        </li>
+        <li><strong><span style="color: black;">สมาชิกสามารถใช้บัตร</span></strong><strong><span style="color: black;"> Free Guest Pass </span></strong><strong><span style="color: black;">ได้ในกรณีใดได้บ้าง</span></strong>
+        <p><span style="color: black;">สมาชิกสามารถพาเพื่อนหรือสมาชิกในครอบครัวมาออกกำลังกายได้ที่สาขา</span><span style="color: black;"> </span><span style="color: black;">ทั้งนี้</span><span style="color: black;"> </span><span style="color: black;">เราขอแนะนำให้ท่านนัดหมายการเข้าใช้บริการดังกล่าวล่วงหน้ากับพนักงานต้อนรับของเราก่อนทุกสาขา</span></p>
+        <p><span style="color: black;">&nbsp;</span></p>
+        </li>
+        <li><strong><span style="color: black;">สมาชิกแบบองค์กรคืออะไร</span></strong>
+        <p><span style="color: black;">สมาชิกแบบองค์กร</span><span style="color: black;"> </span><span style="color: black;">คือ</span><span style="color: black;"> </span><span style="color: black;">การที่องค์กรของสมาชิกเข้าร่วมเป็นสมาชิกของฟิตเนส</span><span style="color: black;"> </span><span style="color: black;">เฟิรส์ท</span><span style="color: black;"> </span><span style="color: black;">จึงทำให้ท่านสามารถใช้สิทธิพิเศษในการเข้าใช้บริการที่สาขาของฟิตเนส</span><span style="color: black;"> </span><span style="color: black;">เฟิรส์ทได้</span><span style="color: black;"> </span><span style="color: black;">ซึ่งทางเราเข้าใจถึงความแตกต่างของแต่ละองค์กร</span><span style="color: black;"> </span><span style="color: black;">เราจึงมีสมาชิกแบบองค์กรที่หลากหลาย</span><span style="color: black;"> </span><span style="color: black;">เพื่อให้เหมาะสมกับองค์กรของท่านมากที่สุด</span><span style="color: black;"></span><span style="color: black;">หากท่านมีข้อสงสัยประการใด</span><span style="color: black;"> </span><span style="color: black;">สามารถสอบถามเพิ่มเติมได้ที่พนักงานต้อนรับทุกสาขา</span></p>
+        <p><span style="color: black;">&nbsp;</span></p>
+        </li>
+        <li><strong><span style="color: black;">มีการกำหนดอายุขั้นต่ำของผู้ที่เป็นสมาชิกหรือไม่</span></strong>
+        <p><span style="color: black;">ผู้ที่เป็นสมาชิกฟิตเนส</span><span style="color: black;"> </span><span style="color: black;">เฟิรส์ทจะต้องมีอายุตั้งแต่</span><span style="color: black;"> 15 </span><span style="color: black;">ปีขึ้นไป</span></p>
+        <p><span style="color: black;">&nbsp;</span></p>
+        </li>
+        <li><strong><span style="color: black;">การเป็นสมาชิกต้องเป็นการเซ็นสัญญาระยะยาวหรือไม่</span></strong>
+        <p><span style="color: black;">การสมัครเป็นสมาชิกไม่จำเป็นต้องเป็นการเซ็นสัญญาระยะยาว</span><span style="color: black;"> </span><span style="color: black;">เนื่องจากการที่ฟิตเนส</span><span style="color: black;"> </span><span style="color: black;">เฟิรส์ทเป็นหนึ่งในสมาชิกของสมาคมศูนย์ออกกำลังกายสากลหรือ</span><span style="color: black;"> IHRSA (International health, Racquet &amp; Sportsclub Association) </span><span style="color: black;">เราจึงปฏิบัติตามกฎและระเบียบของสมาคมที่กำหนดไม่ให้ศูนย์การออกกำลังกายใด</span><span style="color: black;"> </span><span style="color: black;">ๆ</span><span style="color: black;"> </span><span style="color: black;">ส่งเสริมการเซ็นสัญญาระยะยาวอย่างเคร่งครัด</span><span style="color: black;"></span><span style="color: black;"><br>
+        <br>
+        </span><span style="color: black;">ทั้งนี้</span><span style="color: black;"> </span><span style="color: black;">หากท่านมีข้อสงสัยหรือคำถามที่เกี่ยวข้องเพิ่มเติม</span><span style="color: black;"> </span><span style="color: black;">สามารถค้นหาข้อมูลเพิ่มเติมได้ที่เว็บไซต์ของ</span><span style="color: black;"> IHRSA </span><span style="color: black;">หรือ</span><span style="color: black;"> </span><span style="color: black;">สอบถามพนักงานต้อนรับของเราได้ทุกสาขา</span></p>
+        <p><span style="color: black;">&nbsp;</span></p>
+        </li>
+        <li><strong><span style="color: black;">ค่าธรรมเนียมการเป็นสมาชิกฟิตเนส</span></strong> <strong><span style="color: black;">เฟิรส์ท</span></strong> <strong><span style="color: black;">ราคาเท่าไร</span></strong>
+        <p><span style="color: black;">ค่าธรรมเนียมการเป็นสมาชิกฟิตเนส</span><span style="color: black;"> </span><span style="color: black;">เฟิรส์ท</span><span style="color: black;"> </span><span style="color: black;">มีหลายระดับ</span><span style="color: black;"> </span><span style="color: black;">ขึ้นอยู่กับรูปแบบแพ็คเกจที่ท่านเลือก</span><span style="color: black;"></span><span style="color: black;">หากท่านมีข้อสงสัยประการใด</span><span style="color: black;"> </span><span style="color: black;">สามารถสอบถามเพิ่มเติมได้ที่พนักงานต้อนรับทุกสาขา</span></p>
+        <p><span style="color: black;">&nbsp;</span></p>
+        </li>
+        <li><strong><span style="color: black;">สามารถมอบการเป็นสมาชิกฟิตเนส</span></strong> <strong><span style="color: black;">เฟิรส์ทเป็นของขวัญให้กับผู้อื่นได้หรือไม่</span></strong>
+        <p><span style="color: black;">การเป็นสมาชิกฟิตเนส</span><span style="color: black;"> </span><span style="color: black;">เฟิรส์ท</span><span style="color: black;"> </span><span style="color: black;">สามารถซื้อเป็นของขวัญให้กับผู้อื่นได้</span><span style="color: black;"></span><span style="color: black;">หากท่านมีข้อสงสัยประการใด</span><span style="color: black;"> </span><span style="color: black;">สามารถสอบถามเพิ่มเติมได้ที่พนักงานต้อนรับทุกสาขา</span></p>
+        <p><span style="color: black;">&nbsp;</span></p>
+        </li>
+        <li><strong><span style="color: black;">สมาชิกสามารถใช้บริการสาขาที่ต่างประเทศได้หรือไม่</span></strong>
+        <p><span style="color: black;">กว่า</span><span style="color: black;"> 91 </span><span style="color: black;">คลับ</span><span style="color: black;"> </span><span style="color: black;">ใน</span><span style="color: black;"> 6 </span><span style="color: black;">ประเทศ</span><span style="color: black;"> </span><span style="color: black;">ได้แก่</span><span style="color: black;"> </span><span style="color: black;">ฮ่องกง</span><span style="color: black;"> </span><span style="color: black;">อินโดนีเซีย</span><span style="color: black;"> </span><span style="color: black;">มาเลเซีย</span><span style="color: black;"> </span><span style="color: black;">ฟิลิปปินส์</span><span style="color: black;"> </span><span style="color: black;">สิงค์โปร์</span><span style="color: black;"> </span><span style="color: black;">และไทย</span><span style="color: black;"> </span><span style="color: black;">สิทธิประโยชน์ของสมาชิกไม่ได้จำกัดอยู่เพียงแค่ภายในประเทศ</span><span style="color: black;"> </span><span style="color: black;">สัมผัสประสบการณ์ใหม่ด้วยการใช้บริการในต่างประเทศเมื่อเดินทางไปท่องเที่ยวหรือติดต่อธุรกิจ</span><span style="color: black;"> </span><span style="color: black;">โดยสามารถติดต่อขอรับ</span><span style="color: black;"> International Passport </span><span style="color: black;">ก่อนการเดินทางได้</span><span style="color: black;"> </span><span style="color: black;">โดยอาจมีค่าใช้จ่ายเพิ่มเติมขึ้นอยู่กับประเภทของสาขาที่เข้าใช้บริการ</span><span style="color: black;"> </span><span style="color: black;">สอบถามรายละเอียดเพิ่มเติมได้ที่พนักงานต้อนรับทุกสาขา</span></p>
+        <p><span style="color: black;">&nbsp;</span></p>
+        </li>
+        <li><strong><span style="color: black;">สมาชิกสามารถดำเนินการร้องเรียนได้อย่างไร</span></strong>
+        <p><span style="color: black;">สมาชิกสามารถดำเนินการร้องเรียนได้โดยการเขียนคำติชมหรือเสนอข้อคิดเห็นต่าง</span><span style="color: black;"> </span><span style="color: black;">ๆ</span><span style="color: black;"> </span><span style="color: black;">แล้วใส่ในกล่อง</span><span style="color: black;"> Hey Manager </span><span style="color: black;">บริเวณเคาน์เตอร์พนักงานต้อนรับหรือให้คะแนนการให้บริการผ่าน</span><span style="color: black;"> iPad</span><span style="color: black;"></span><span style="color: black;">บริเวณเมมเบอร์เลาจน์ได้ทุกสาขา</span></p>
+        <p><span style="color: black;">&nbsp;</span></p>
+        </li>
+        <li><strong><span style="color: black;">สมาชิกสามารถจ่ายค่าสมาชิกได้ผ่านช่องทางใดบ้าง</span></strong>
+        <p><span style="color: black;">สมาชิกสามารถจ่ายค่าสมาชิกผ่านบัตรเครดิต</span><span style="color: black;">หรือหักผ่านบัญชี</span><span style="color: black;"> </span><span style="color: black;">ทั้งนี้</span><span style="color: black;"> </span><span style="color: black;">สมาชิกสามารถจ่ายค่าสมาชิกเป็นเงินสดได้ในบางกรณี</span><span style="color: black;"></span><span style="color: black;">หากท่านมีข้อสงสัยประการใด</span><span style="color: black;"> </span><span style="color: black;">สามารถสอบถามเพิ่มเติมได้ที่พนักงานของเราได้ทุกสาขา</span></p>
+        <p><span style="color: black;">&nbsp;</span></p>
+        </li>
+        <li><strong><span style="color: black;">ฟิตเนส</span></strong> <strong><span style="color: black;">เฟิรส์ท</span></strong> <strong><span style="color: black;">มีสระว่ายน้ำที่สาขาใดบ้าง</span></strong>
+        <p><span style="color: black;">ฟิตเนส</span><span style="color: black;"> </span><span style="color: black;">เฟิรส์ท</span><span style="color: black;"> </span><span style="color: black;">คลับ</span><span style="color: black;"> 39 </span><span style="color: black;">และ</span><span style="color: black;"> </span><span style="color: black;">คลับ</span><span style="color: black;"> </span><span style="color: black;">ไอคอน</span></p>
+        <p><span style="color: black;">&nbsp;</span></p>
+        </li>
+        <li><strong><span style="color: black;">มีการกำหนดอายุขั้นต่ำของการสมัครสมาชิกหรือไม่</span></strong></li>
+    </ol>
+    <p style="margin: 3.75pt 0cm 3.75pt 40px;"><span style="color: black;">ผู้ที่สมัครสมาชิกจะต้องมีอายุตั้งแต่</span><span style="color: black;"> 15 </span><span style="color: black;">ปีขึ้นไป</span><span style="color: black;"> </span><span style="color: black;">ซึ่งทางฟิตเนส</span><span style="color: black;"> </span><span style="color: black;">เฟิรส์ทจะให้เยาวชนที่มีอายุต่ำกว่า</span><span style="color: black;"> 15 </span><span style="color: black;">ปี</span><span style="color: black;"> </span><span style="color: black;">สมัครสมาชิกได้ในกรณีที่เป็นการแนะนำจากแพทย์ให้ลดน้ำหนักและมีความจำเป็นต้องได้รับคำแนะนำจากเทรนเนอร์เท่านั้น</span><span style="color: black;"> </span><span style="color: black;">การสมัครเป็นสมาชิกของเยาวชนอายุต่ำกว่า</span><span style="color: black;"> 20 </span><span style="color: black;">ปี</span><span style="color: black;"> </span><span style="color: black;">ทุกกรณีจะต้องได้รับการยินยอมจากผู้ปกครองตามกฎหมาย</span></p>
+    <p>&nbsp;</p>
+</ol></div>    </div>
+</div>
+
+                                </div>
+                        </li>
+                        <li class="item">
+                                <div class="toggle-header">
+                                    <div class="label">
+                                        
+<div class="component content">
+    <div class="component-content">
+<div class="field-heading"><p>คำถามเกี่ยวกับสมาชิก<br></p></div>    </div>
+</div>
+
+                                    </div>
+                                </div>
+                                <div class="toggle-content" style="display: none;">
+                                    
+<div class="component content">
+    <div class="component-content">
+<div class="field-content"><ol>
+    <ol>
+        <li><strong><span>สมาชิกสามารถนำเพื่อนหรือบุคคลภายนอกมาออกกำลังกายด้วยได้หรือไม่</span></strong>
+        <p><span style="background: none 0% 0% repeat scroll white;">สมาชิกสามารถนำเพื่อนหรือครอบครัวมาทดลองออกกำลังกายได้ครั้งละไม่เกิน 3 ท่าน  โดยกรุณาลงทะเบียนการเข้าใช้บริการที่สาขาที่ไปทดลองใช้บริการ  และจะสามารถเข้าทดลองได้อีกครั้ง 6 เดือนหลังจากการทดลองแล้ว หากท่านมีข้อสงสัยประการใด สามารถสอบถามเพิ่มเติมได้ที่พนักงานต้อนรับทุกสาขา</span></p>
+        <p><span>&nbsp;</span></p>
+        </li>
+        <li><strong><span>สมาชิกสามารถหยุดการเป็นสมาชิกชั่วคราวได้หรือไม่</span></strong>
+        <p><span style="background: none 0% 0% repeat scroll white;">สมาชิกสามารถหยุดการเป็นสมาชิกชั่วคราวได้</span><span style="background: none 0% 0% repeat scroll white;"> </span><span style="background: none 0% 0% repeat scroll white;">โดยมีเหตุผลทางสุขภาพ</span><span style="background: none 0% 0% repeat scroll white;"> </span><span style="background: none 0% 0% repeat scroll white;">หรือจำเป็นต้องเดินทางไปทำงานต่างประเทศ</span><span style="background: none 0% 0% repeat scroll white;"> </span><span style="background: none 0% 0% repeat scroll white;">เป้นระยะเวลามากกว่า</span><span style="background: none 0% 0% repeat scroll white;"> 2 </span><span style="background: none 0% 0% repeat scroll white;">อาทิตย์ขึ้นไป</span><span style="background: none 0% 0% repeat scroll white;"> </span><span style="background: none 0% 0% repeat scroll white;">เพราะที่ฟิตเนส</span><span style="background: none 0% 0% repeat scroll white;"> </span><span style="background: none 0% 0% repeat scroll white;">เฟิรส์ทเรามีความเชื่อว่าการออกกำลังกายเป็นกิจกรรมที่ควรปฏิบัติต่อเนื่องเพื่อสุขภาพที่ดีในระยะยาว</span><span style="background: none 0% 0% repeat scroll white;"> </span><span style="background: none 0% 0% repeat scroll white;">ทั้งนี้</span><span style="background: none 0% 0% repeat scroll white;"> </span><span style="background: none 0% 0% repeat scroll white;">สมาชิกต้องแจ้งเหตุผลการขอหยุดการเป็นสมาชิกชั่วคราวเป็นลายลักณ์อักษร</span><span style="background: none 0% 0% repeat scroll white;"></span><span>หากท่านมีข้อสงสัยประการใด</span><span> </span><span>สามารถสอบถามเพิ่มเติมได้ที่พนักงานต้อนรับทุกสาขา</span></p>
+        <p><span>&nbsp;</span></p>
+        </li>
+        <li><strong><span>สมาชิกสามารถยกเลิกการเป็นสมาชิกได้หรือไม่</span></strong>
+        <p><span>ที่ฟิตเนส</span><span> </span><span>เฟิรส์ท</span><span> </span><span>เราหวังว่าสมาชิกทุกท่านจะได้รับประโยชน์สูงสุดจากการออกกำลังกายกับเรา</span><span> </span><span>อย่างไรก็ตาม</span><span> </span><span>หากท่านจำเป็นต้องยกเลิกการเป็นสมาชิก</span><span> </span><span>ท่านสามารถติดต่อเจ้าหน้าที่ต้อนรับที่สาขาใกล้บ้านท่าน</span><span> </span><span>ซึ่งเจ้าหน้าที่จะช่วยประสานในการดำเนินการยกเลิกการเป็นสมาชิกของท่าน</span><span> </span><span>ซึ่งปกติสมาชิกสามารถยกเลิกการเป็นสมาชิกได้โดยไม่มีเงื่อนไขในเวลา</span><span> 7 </span><span>วันหลังจากสมัครเป็นสมาชิก</span><span> </span><span>พร้อมทั้งคืนเงินค่าสมาชิกให้กับท่าน</span><span> </span><span>อย่างไรก็ตามทางเราขอสงวนที่จะเก็บค่าลงทะเบียนและค่าเทรนเนอร์ส่วนตัวหรือ</span><span> BODYFIRST </span><span>หากสมาชิกประสงค์จะยกเลิกการเป็นสมาชิกภายหลังจากช่วงระยะเวลา</span><span> 7 </span><span>วันดังกล่าว</span><span> </span><span>สมาชิกจะต้องแจ้งความจำนงค์การยกเลิกการเป็นสมาชิกเป็นลายลักษณ์อักษรก่อนล่วงหน้า</span><span> 1 </span><span>เดือน&nbsp;</span>ซึ่งท่านสามารถดำเนินการยกเลิกการเป็นสมาชิกใดทันทีหลังจากที่ท่านเป็นสมาชิกครบกำหนดระยะเวลาขั้นต่ำที่กำหนดไว้ในสัญญา (ไม่รวมช่วงระยะเวลาของการหยุดเป็นสมาชิกชั่วคราว) การยกเลิกสมาชิกทำได้โดยการนัดหมายล่วงหน้าเท่านั้นหากท่านมีข้อสงสัยประการใด สามารถสอบถามเพิ่มเติมได้ที่พนักงานต้อนรับทุกสาขา</p>
+        <p><span>&nbsp;</span></p>
+        </li>
+        <li><strong><span>หากมีความประสงค์จะใช้บริการล็อคเกอร์ต้องทำอย่างไร</span></strong>
+        <p><span>หากสมาชิกประสงค์จะใช้บริการล็อคเกอร์</span><span> </span><span>ท่านสามารถใช้บัตรสมาชิกของท่านในการแลกกุญแจเปิดปิดล็อคเกอร์</span><span> </span><span>ทั้งนี้ในส่วนของสาขาที่ใช้ระบบสมาร์ทการ์ดในการเปิดปิดล็อคเกอร์</span><span> </span><span>ท่านสามารถนำบัตรสมาชิกไปแลกสมาร์ทการ์ดได้</span></p>
+        <p><span>&nbsp;</span></p>
+        <p><span>หมายเหตุ</span><span>: </span><span>ฟิตเนส</span><span> </span><span>เฟิรส์ท</span><span> </span><span>ขอสงวนสิทธิ์การให้บริการล็อคเกอร์กับสมาชิกในระหว่างการออกกำลังกายเท่านั้น</span><span> </span><span>ล็อคเกอร์จะปลดล็อคโดยอัตโนมัติภายหลังจากการปิดให้บริการทุกวัน</span><span> </span><span>นอกจากนี้</span><span> </span><span>ทางเราจะไม่ขอรับผิดชอบต่อการสูญหายหรือเสียหายต่อทรัพย์สินใด</span><span> </span><span>ๆ</span><span> </span><span>ของสมาชิกในกรณีมีการโจรกรรม</span><span> </span><span>รวมถึงการใช้งานล็อคเกอร์ไม่ถูกต้องของสมาชิกเอง</span><span> </span><span>หากท่านมีข้อสงสัยประการใด</span><span> </span><span>สามารถสอบถามเพิ่มเติมได้ที่พนักงานต้อนรับทุกสาขา</span></p>
+        <p><span>&nbsp;</span></p>
+        </li>
+        <li><strong><span>ทีมปฐมพยาบาลเบื้องต้นของฟิตเนส</span></strong> <strong><span>เฟิรส์ท</span></strong> <strong><span>ผ่านการฝึกอบรมอย่างเป็นทางการหรือไม่</span></strong>
+        <p><span>ที่ฟิตเนส</span><span> </span><span>เฟิรส์ท</span><span> </span><span>เรามีทีมเจ้าหน้าที่และอุปกรณ์ปฐมพยาบาลเบื้องต้นเตรียมพร้อมรองรับเหตุการณ์ไม่คาดคิดต่าง</span><span> </span><span>ๆ</span><span> </span><span>ครบถ้วน</span></p>
+        <p><span>&nbsp;</span></p>
+        </li>
+        <li><strong><span>สมาชิกสามารถสอบถามเพิ่มเติมเกี่ยวกับการใช้อุปกรณ์การออกกำลังกายได้กับใคร</span></strong>
+        <p><span>สมาชิกทุกท่านสามารถสอบถามเทรนเนอร์หรือพนักงานให้คำปรึกษาด้านการออกกำลังกายได้ตลอดในการใช้บริการทุกสาขา</span></p>
+        <p><span>&nbsp;</span></p>
+        </li>
+        <li><strong><span>บุตรของสมาชิกสามารถนั่งรอในห้องรับรอง</span></strong> <strong><span>ขณะที่สมาชิกออกกำลังกายได้หรือไม่</span></strong>
+        <p><span>ฟิตเนส</span><span> </span><span>เฟิรส์ท</span><span> </span><span>ไม่อนุญาติให้สมาชิกนำบุตรเข้ามาในบริเวณห้องรับรองสมาชิกเพียงลำพัง</span><span> </span><span>เพื่อความปลอดภัยของบุตรท่านเอง</span></p>
+        <p><span>&nbsp;</span></p>
+        </li>
+        <li><strong><span>สมาชิกควรปฏิบัติตัวเช่นไร</span></strong> <strong><span>หากสัญญาณเตือนภัยดังขึ้น</span></strong>
+        <p><span>หากสัญญาณเตือนภัยดังขึ้น</span><span> </span><span>ฟิตเนส</span><span> </span><span>เฟิรส์ท</span><span> </span><span>ขอความร่วมมือให้สมาชิกทุกท่านปฏิบัติตามคำแนะนำของพนักงานที่ผ่านการฝึกอบรมในกรณีมีเหตุการณ์ฉุกเฉินอย่างเคร่งครัด</span><span> </span><span>ทั้งนี้</span><span> </span><span>หากเป็นการทดสอบสัญญาณเตือนภัย</span><span> </span><span>สัญญาณเตือนภัยจะเงียบลงในระยะเวลาอันสั้น</span></p>
+        <p><span>&nbsp;</span></p>
+        </li>
+        <li><strong><span>สมาชิกควรเข้ามาออกกำลังกายในช่วงเวลาใด</span></strong> <strong><span>ที่สมาชิกท่านอื่น</span></strong> <strong><span>ๆ</span></strong> <strong><span>มาใช้บริการไม่มากนัก</span></strong>
+        <p><span>โดยปกติทุกสาขาจะมีสมาชิกมาใช้บริการมากที่สุดในช่วงเวลาก่อนทำงาน</span><span> </span><span>พักทานอาหารเที่ยง</span><span> </span><span>และหลังเลิกงานในช่วงวันธรรมดา</span><span> </span><span>ดังนั้นเราขอแนะนำให้ท่านเข้าใช้บริการหลังช่วงเวลากลางวัน</span></p>
+        <p><span>&nbsp;</span></p>
+        </li>
+        <li><strong><span>สมาชิกสามารถติชม</span></strong> <strong><span>แนะนำผลิตภัณฑ์และบริการของฟิตเนส</span></strong> <strong><span>เฟิรส์ทได้อย่างไร</span></strong>
+        <p><span>ที่ฟิตเนส</span><span> </span><span>เฟิรส์ท</span><span> </span><span>เรายินดีรับคำแนะนำ</span><span> </span><span>ติ</span><span> </span><span>ชม</span><span> </span><span>จากสมาชิกทุกท่าน</span><span> </span><span>โดยท่านสมารถพูดคุย</span><span> </span><span>ปรึกษาให้คำแนะนำต่าง</span><span> </span><span>ๆ</span><span> </span><span>กับทางพนักงานของเราได้ทุกเวลา</span><span> </span><span>โดยหากท่านประสงค์ที่จะแนะนำ</span><span> </span><span>ติ</span><span> </span><span>ชม</span><span> </span><span>ผลิตภัณฑ์และบริการของเรากับผู้จัดการสาขาโดยตรง</span><span> </span><span>ท่านสามารถติดต่อเจ้าหน้าที่ต้อนรับเพื่อที่ทางเราจะได้ช่วยอำนวยความสะดวกแก่ท่านได้อย่างเหมาะสม</span><span> </span><span>นอกจากนี้สมาชิกยังสามารถเขียนคำแนะนำ</span><span> </span><span>ติ</span><span> </span><span>ชม</span><span> </span><span>หรือข้อคิดเห็นต่าง</span><span> </span><span>ๆ</span><span> </span><span>แล้วใส่ในกล่อง</span><span> Hey Manager </span><span>ที่วางไว้บริเวณเคาน์เตอร์พนักงานต้อนรับหรือให้คะแนนการให้บริการผ่าน</span><span> iPad</span><span></span><span>บริเวณเมมเบอร์เลาจน์ได้ทุกสาขา</span><span> </span><span>รวมถึงการกรอกผ่านแบบฟอร์มหน้าเว็บไซต์ของเราอีกด้วย</span><span> </span><span>เราพร้อมและยินดีนำคำแนะนำ</span><span> </span><span>ติ</span><span> </span><span>ชม</span><span> </span><span>ของท่านไปปรับปรุงคุณภาพของเราอย่างเต็มที่</span></p>
+        <p><span>&nbsp;</span></p>
+        </li>
+        <li><strong><span>หากทำของสูญหายในห้องเปลี่ยนชุด</span></strong><strong><span>สมาชิกต้องปฏิบัติอย่างไร</span></strong>
+        <p><span>หากสมาชิกทำของสูญหายในห้องเปลี่ยนชุด</span><span> </span><span>ท่านสามารถแจ้งพนักงานได้ทันที</span><span> </span><span>ทั้งนี้</span><span> </span><span>การดูแลรักษาทรัพย์สินถือว่าเป็นความรับผิดชอบของสมาชิกเอง</span></p>
+        <p><span>&nbsp;</span></p>
+        </li>
+        <li><strong><span>สมาชิกต้องปฏิบัติเช่นไร</span></strong> <strong><span>หากทำบัตรสมาชิกสูญหาย</span></strong>
+        <p><span>ท่านสามารถแจ้งกับพนักงานได้ทันที</span><span> </span><span>เพื่อทางเราจะได้ดำเนินการออกบัตรสมาชิกใหม่ให้กับท่าน</span><span> </span><span>โดยการดำเนินการนี้จะมีค่าธรรมเนียมการออกบัตรใหม่</span></p>
+        <p><span>&nbsp;</span></p>
+        </li>
+        <li><strong><span>ฟิตเนส</span></strong> <strong><span>เฟิรส์ท</span></strong> <strong><span>มีการจัดงานเพื่อกระชับสัมพันธ์ระหว่างสมาชิกและพนักงานหรือไม่</span></strong>
+        <p><span>ที่ฟิตเนส</span><span> </span><span>เฟิรส์ท</span><span> </span><span>เราตระหนักถึงความสำคัญของการมีสัมพันธ์อันดีระหว่างสมาชิกและพนักงาน</span><span> </span><span>เรามีการจัดกิจกรรมกระชับความสัมพันธ์อย่างต่อเนื่อง</span><span> </span><span>ซึ่งจะประชาสัมพันธ์ผ่านบอร์ดประชาสัมพันธ์ของแต่ละสาขา</span></p>
+        <p><span>&nbsp;</span></p>
+        </li>
+        <li><strong><span>เวลาเปิดปิดให้บริการของสาขาคือเวลาใด</span></strong></li>
+    </ol>
+    <p style="margin-bottom: 0.0001pt;"><span><span style="white-space: pre;">	</span>&nbsp; &nbsp;เวลาเปิด</span><span>-</span><span>ปิดให้บริการมาตรฐาน</span></p>
+    <p><span><span style="white-space: pre;">	</span>&nbsp; &nbsp;จันทร์</span><span>-</span><span>ศุกร์</span><span> : 6.00 - 22.00 </span><span>น</span><span>.</span></p>
+    <p><span><span style="white-space: pre;">	</span>&nbsp; &nbsp;เสาร์</span><span>-</span><span>อาทิตย์</span><span> : 8.00 - 21.00 </span><span>น</span><span>.</span></p>
+    <p><span><span style="white-space: pre;">	</span>&nbsp; &nbsp;วันหยุดนักขัตฤกษ์</span><span> : 8.00 - 20.00 </span><span>น</span><span>.</span></p>
+    <p><span><span style="white-space: pre;">	</span>&nbsp; &nbsp;[เดอะ มอลล์ โคราช] จันทร์</span><span>-</span><span>ศุกร์</span><span> : 6.00 - 21.30 </span><span>น</span><span>.</span></p>
+    <p><span><span style="white-space: pre;">	</span>&nbsp; &nbsp;[แพลตตินั่ม สยาม พารากอน] เสาร์</span><span>-</span><span>อาทิตย์</span><span> : 8.00 - 22.00 น.</span></p>
+    <p><span>&nbsp;</span></p>
+    <p><span><span style="white-space: pre;">	</span>&nbsp; &nbsp;<strong>สาขาที่เปิดให้บริการ</strong></span><strong><span> 24 </span><span>ชั่วโมง</span></strong></p>
+    <p><span><span style="white-space: pre;">	</span>&nbsp; &nbsp;- แพลตตินั่ม</span><span> </span><span>คิวเฮาส์</span><span> </span><span>ลุมพินี</span></p>
+    <p><span>&nbsp;</span></p>
+    <p><span><span style="white-space: pre;">	</span>&nbsp; &nbsp;<strong>สาขาที่มีการเพิ่มเวลาให้บริการ</strong></span></p>
+    <p><span><span style="white-space: pre;">	</span>&nbsp; &nbsp;จันทร์</span><span>-</span><span>ศุกร์</span><span> : 5.00 - 00.00 </span><span>น</span><span>.</span></p>
+    <p><span><span style="white-space: pre;">	</span>&nbsp; &nbsp;- แพลตตินั่ม</span><span> </span><span>เอไอเอ</span><span> </span><span>แคปปิตอล</span><span> </span><span>เซ็นเตอร์</span></p>
+    <p><span><span style="white-space: pre;">	</span>&nbsp; &nbsp;- แพลตตินั่ม</span><span> </span><span>สยาม</span><span> </span><span>พารากอน</span></p>
+    <p><span><span style="white-space: pre;">	</span>&nbsp; &nbsp;- แพลตตินั่ม</span><span> </span><span>สาทร</span><span> </span><span>สแควร์</span></p>
+    <p><span><span style="white-space: pre;">	</span>&nbsp; &nbsp;- เมกา</span><span> </span><span>บางนา</span></p>
+</ol></div>    </div>
+</div>
+
+                                </div>
+                        </li>
+                </ul>                            
+            </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+</div>    </div>
+</div>
+            </div>
+        </div>
+    </main>
+    <!-- /#content -->
+    <!-- #footer -->
+    <footer>
+        <div id="footer" class="container-fluid">
+            <div class="row">
+                
+
+
+
+
+
+
+<div class="component container-fluid col-xs-12 footer" data-disable-in-mobile="False" style="padding-bottom: 130px;">
+    <div class="component-content mb-20 mb-lg-0">
+
+<div class="component row-splitter">
+        <div class="container-fluid">
+            <div class="row">
+                
+
+<div class="component language-selector initialized">
+    <div class="component-content">
+        <div class="language-switcher dark">
+            <div class="ls-item selected-item">
+                     <div class="my-flag-icon">
+                        <div class="img-icon" style="background-image:url(&quot;th.svg&quot;)"></div>
+                    </div>
+                    <span>Thailand</span>
+                    <span class="seperator">
+                        |
+                    </span>
+                    <span>
+                        ไทย
+                    </span>
+
+            </div>
+            <div class="language-list" data-simplebar="init"><div class="simplebar-track vertical" style="visibility: hidden;"><div class="simplebar-scrollbar"></div></div><div class="simplebar-track horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar"></div></div><div class="simplebar-scroll-content" style="padding-right: 17px; margin-bottom: -34px;"><div class="simplebar-content" style="padding-bottom: 17px; margin-right: -17px;">
+                <ul class="">
+                            <li>
+                                <a href="https://www.fitnessfirst.com.hk/">
+                                    <div class="ls-item">
+                                        <div class="my-flag-icon">
+                                            <div class="img-icon" style="background-image:url(&quot;hk.svg&quot;)"></div>
+                                        </div>
+                                        <span>Hong Kong</span>
+                                        <span class="seperator">
+                                            |
+                                        </span>
+                                        <span>
+                                            EN
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.fitnessfirst.com.hk/zh/">
+                                    <div class="ls-item">
+                                        <div class="my-flag-icon">
+                                            <div class="img-icon" style="background-image:url(&quot;hk.svg&quot;)"></div>
+                                        </div>
+                                        <span>Hong Kong</span>
+                                        <span class="seperator">
+                                            |
+                                        </span>
+                                        <span>
+                                            中文
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.fitnessfirst.co.id/">
+                                    <div class="ls-item">
+                                        <div class="my-flag-icon">
+                                            <div class="img-icon" style="background-image:url(&quot;id.svg&quot;)"></div>
+                                        </div>
+                                        <span>Indonesia</span>
+                                        <span class="seperator">
+                                            |
+                                        </span>
+                                        <span>
+                                            EN
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.fitnessfirst.co.id/id/">
+                                    <div class="ls-item">
+                                        <div class="my-flag-icon">
+                                            <div class="img-icon" style="background-image:url(&quot;id.svg&quot;)"></div>
+                                        </div>
+                                        <span>Indonesia </span>
+                                        <span class="seperator">
+                                            |
+                                        </span>
+                                        <span>
+                                            ID
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.fitnessfirst.com.my/">
+                                    <div class="ls-item">
+                                        <div class="my-flag-icon">
+                                            <div class="img-icon" style="background-image:url(&quot;my.svg&quot;)"></div>
+                                        </div>
+                                        <span>Malaysia</span>
+                                        <span class="seperator">
+                                            |
+                                        </span>
+                                        <span>
+                                            EN
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.fitnessfirst.com.ph/">
+                                    <div class="ls-item">
+                                        <div class="my-flag-icon">
+                                            <div class="img-icon" style="background-image:url(&quot;ph.svg&quot;)"></div>
+                                        </div>
+                                        <span>Philippines</span>
+                                        <span class="seperator">
+                                            |
+                                        </span>
+                                        <span>
+                                            EN
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.fitnessfirst.com.sg/">
+                                    <div class="ls-item">
+                                        <div class="my-flag-icon">
+                                            <div class="img-icon" style="background-image:url(&quot;sg.svg&quot;)"></div>
+                                        </div>
+                                        <span>Singapore</span>
+                                        <span class="seperator">
+                                            |
+                                        </span>
+                                        <span>
+                                            EN
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.fitnessfirst.co.th/membership/individual">
+                                    <div class="ls-item">
+                                        <div class="my-flag-icon">
+                                            <div class="img-icon" style="background-image:url(&quot;th.svg&quot;)"></div>
+                                        </div>
+                                        <span>Thailand</span>
+                                        <span class="seperator">
+                                            |
+                                        </span>
+                                        <span>
+                                            EN
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+
+                </ul>
+            </div></div></div>
+
+        </div>
+    </div>
+</div>
+
+
+    <div class="component breadcrumb navigation-title col-xs-12 initialized">
+        <div class="component-content">
+            <nav>
+                <ol>
+                        <li class="breadcrumb-item home">
+<div class="navigation-title field-navigationtitle"><a title="Home" href="https://www.fitnessfirst.co.th/th"></a></div>                                <span class="separator">&gt;</span>
+                        </li>
+                        <li class="breadcrumb-item ">
+<div class="navigation-title text-capitalize field-display-name"><a title="Membership" href="https://www.fitnessfirst.co.th/th/membership">Membership</a></div>                                <span class="separator">&gt;</span>
+                        </li>
+                        <li class="breadcrumb-item last">
+<div class="navigation-title field-navigationtitle"><a title="individual" href=""></a></div>                                <span class="separator">&gt;</span>
+                        </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+            </div>
+        </div>
+        <div class=" p-0 container-fluid">
+            <div class="row">
+                
+
+<div class="row component column-splitter">
+        <div class="col-xs-12 col-md-8">
+            
+
+
+
+
+<div class="component container-fluid col-xs-12 p-0" data-disable-in-mobile="False">
+    <div class="component-content mb-20 mb-lg-0">
+
+
+<div class="row component column-splitter">
+        <div class="col-xs-12 col-md-3">
+            
+
+
+
+
+<div class="component container-fluid col-xs-12 mobile-collapse p-0" data-disable-in-mobile="False">
+    <div class="component-content mb-20 mb-lg-0">
+
+
+    <div class="component heading col-xs-12">
+        <div class="component-content">
+<div class="title-small"><div class="title font-medium font-italic down-arrow-icon field-text"><p>ประเภทสมาชิก</p></div><div class="seperator"></div></div>        </div>
+    </div>
+
+<div class="component link-list col-xs-12">
+    <div class="component-content">
+        
+                <ul>
+                <li class="item0 odd first">
+<ul class="collapse-area"><li class="field-link"><a href="" data-variantitemid="{1F48D8F7-92A7-4D86-8D4A-749383E13934}" data-variantfieldname="Link">สมาชิกทั่วไป</a></li></ul>                </li>
+                <li class="item1 even">
+<ul class="collapse-area"><li class="field-link"><a href="https://www.fitnessfirst.co.th/th/membership/corporate" data-variantitemid="{5978629E-0A43-45A0-BC56-53C6FB2D9608}" data-variantfieldname="Link">สมาชิกองค์กร</a></li></ul>                </li>
+                <li class="item2 odd">
+<ul class="collapse-area"><li class="field-link"><a href="https://www.fitnessfirst.co.th/th/personal-training" data-variantitemid="{F37F7FAA-3BEF-436D-8E43-1F084397F150}" data-variantfieldname="Link">สิทธิประโยชน์สำหรับสมาชิก</a></li></ul>                </li>
+                <li class="item3 even last">
+<ul class="collapse-area"><li class="field-link"><a href="https://www.fitnessfirst.co.th/th/faqs" data-variantitemid="{00C88982-D91A-448E-8F4B-EF90F8964AF3}" data-variantfieldname="Link">คำถามที่พบบ่อย</a></li></ul>                </li>
+        </ul>
+    </div>
+</div>
+    </div>
+</div>
+        </div>
+        <div class="col-xs-12 col-md-3">
+            
+
+
+
+
+<div class="component container-fluid col-xs-12 mobile-collapse p-0" data-disable-in-mobile="False">
+    <div class="component-content mb-20 mb-lg-0">
+
+
+    <div class="component heading col-xs-12">
+        <div class="component-content">
+<div class="title-small"><div class="title font-medium font-italic down-arrow-icon field-text">คลับ &amp; คลาส</div><div class="seperator"></div></div>        </div>
+    </div>
+
+<div class="component link-list col-xs-12">
+    <div class="component-content">
+        
+                <ul>
+                <li class="item0 odd first">
+<div class="field-link"><a href="https://www.fitnessfirst.co.th/th/clubs" data-variantitemid="{50D5DBCD-5BA2-470D-850D-DECE58C3862B}" data-variantfieldname="Link">ค้นหาคลับ</a></div>                </li>
+                <li class="item1 even">
+<div class="field-link"><a href="https://www.fitnessfirst.co.th/th/timetable" data-variantitemid="{E50C89A2-750C-4F04-BBCE-2C3C3FAD81FB}" data-variantfieldname="Link">ตารางคลาส</a></div>                </li>
+                <li class="item2 odd">
+<div class="field-link"><a href="https://www.fitnessfirst.co.th/th/classes" data-variantitemid="{7BC3614D-2380-4440-9BE1-0866F040E252}" data-variantfieldname="Link">คลาส</a></div>                </li>
+                <li class="item3 even last">
+<div class="field-link"></div>                </li>
+        </ul>
+    </div>
+</div>
+    </div>
+</div>
+        </div>
+        <div class="col-xs-12 col-md-3">
+            
+
+
+
+
+<div class="component container-fluid col-xs-12 mobile-collapse p-0" data-disable-in-mobile="False">
+    <div class="component-content mb-20 mb-lg-0">
+
+
+    <div class="component heading col-xs-12">
+        <div class="component-content">
+<div class="title-small"><div class="title font-medium font-italic down-arrow-icon field-text">ช่องทางการติดต่อ</div><div class="seperator"></div></div>        </div>
+    </div>
+
+<div class="component link-list col-xs-12">
+    <div class="component-content">
+        
+                <ul>
+                <li class="item0 odd first">
+<div class="field-link"><a href="https://www.fitnessfirst.co.th/th/free-trial" data-variantitemid="{CA0C8410-21A7-451A-BB67-BA4F85538F4E}" data-variantfieldname="Link">ทดลองเล่นฟรี</a></div>                </li>
+                <li class="item1 even">
+<div class="field-link"><a href="https://www.fitnessfirst.co.th/th/contact-us" data-variantitemid="{0314F589-75F4-4B13-B045-5E27EE2068F3}" data-variantfieldname="Link">ติดต่อเรา</a></div>                </li>
+                <li class="item2 odd last">
+<div class="field-link"><a href="https://www.fitnessfirst.co.th/th/careers" data-variantitemid="{2FFBE31C-475A-414E-AE2F-F55586AF32F9}" data-variantfieldname="Link">ตำแหน่งงาน</a></div>                </li>
+        </ul>
+    </div>
+</div>
+    </div>
+</div>
+        </div>
+        <div class="col-xs-12 col-md-3">
+            
+
+
+
+
+<div class="component container-fluid col-xs-12 p-0" data-disable-in-mobile="False">
+    <div class="component-content mb-20 mb-lg-0">
+
+
+    <div class="component heading col-xs-12">
+        <div class="component-content">
+<div class="title-small"><div class="title font-medium font-italic field-text"><p>พบกับเราได้ใน</p></div><div class="seperator"></div></div>        </div>
+    </div>
+
+
+
+
+
+<div class="component container-fluid col-xs-12" data-disable-in-mobile="False">
+    <div class="component-content mb-20 mb-lg-0">
+
+
+
+
+
+<div class="component container-fluid col-xs-12 d-flex content-flex-column content-flex-wrap social-icons p-0" data-disable-in-mobile="False">
+    <div class="component-content mb-20 mb-lg-0">
+
+<div class="component image">
+    <div class="component-content">
+<a title="Image 1" href="https://www.facebook.com/FitnessFirstThailand/"><div class="circle-icon"><img src="facebook-f.svg" alt="Facebook" data-variantitemid="{8253E635-9074-45CC-864C-19CB820167FF}" data-variantfieldname="Image" style="margin: 0px 0px"></div></a>    </div>
+</div>
+
+<div class="component image">
+    <div class="component-content">
+<a title="Image 3" href="https://www.youtube.com/user/fitnessfirstthailand"><div class="circle-icon"><img src="youtube.svg" alt="YouTube" data-variantitemid="{DB8DAFA8-C045-48DC-A9E4-E2A8B3F86F32}" data-variantfieldname="Image" style="margin: 0px 0px"></div></a>    </div>
+</div>
+    </div>
+</div>    </div>
+</div>    </div>
+</div>
+        </div>
+</div>    </div>
+</div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+            
+
+    <div class="component heading col-xs-12">
+        <div class="component-content">
+<div class="title-small"><div class="title font-medium font-italic field-text"><div>ต้องการรับข่าวสารจากเรา</div></div><div class="seperator"></div></div>        </div>
+    </div>
+    <div class="component newsletter-form col-xs-12 mb-30">
+        <div class="component-content">
+                <div class="subscribe-form-section">
+                    <form action="https://www.fitnessfirst.co.th/th/membership/individual">
+                        <div class="input-group-footer">
+                            <input class="input-field bg-black" type="email" placeholder="กรอกอีเมลที่นี่" value="">
+                            <button class="btn btn-primary newsletter-button" type="submit"> <span class="btn-text">ตกลง</span></button>
+                        </div>
+                    </form>
+                </div>
+        </div>
+    </div>
+<div class="component plain-html">
+    <div class="component-content">
+<div id="Certificate-banners"><a title="กรมพัฒนาธุรกิจการค้า Trustmarkthai" style="padding-left: 5px;" href="javascript:void(0);" onclick="open_popup(&quot;https://www.trustmarkthai.com/callbackData/popup.php?data=66140f2-19-5-7e9ea0c28ed667828c33f87528acf099fea4b1&amp;markID=firstmark&quot;);"><img alt="กรมพัฒนาธุรกิจการค้า Trustmarkthai" src="bns_registered.png"></a>
+</div>
+<style>#Certificate-banners img {background:#FFF;transform:skewX(-8.6deg)}@media (max-width: 768px) {#Certificate-banners img {margin-left:15px;}}</style>    </div>
+</div>
+        </div>
+</div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                
+
+    <div class="component rich-text col-xs-12 footer-text">
+        <div class="component-content">
+<div>Copyright  © Fitness Ltd &nbsp; |<a href="https://www.fitnessfirst.co.th/th/about-us"> เกี่ยวกับเรา</a> | <a href="https://www.fitnessfirst.co.th/th/club-rules">กฎระเบียบสมาชิก</a>&nbsp;| <a href="https://www.fitnessfirst.co.th/th/privacy-policy">นโยบายความเป็นส่วนตัว</a>&nbsp;| <a href="https://www.fitnessfirst.co.th/th/terms-and-conditions">ข้อกำหนดและเงื่อนไข</a></div><a>This site is not a part of the Facebook website or Facebook Inc. Additionally. This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. </a>        </div>
+    </div>
+
+            </div>
+        </div>
+</div>    </div>
+</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /#footer -->
+</div>
+
+
+
+</body>
+</html>

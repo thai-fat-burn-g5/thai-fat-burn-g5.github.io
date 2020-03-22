@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "FitnessFirstIt";
+  font-style: "initial";
+  font-weight: "initial";
+  src: url("SohoGothicPro-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FitnessFirst";
+  font-style: "italic";
+  font-weight: "initial";
+  src: url("SohoGothicPro-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FitnessFirst";
+  font-style: "initial";
+  font-weight: "initial";
+  src: url("SohoGothicPro-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FitnessFirst-BoldIt";
+  font-style: "initial";
+  font-weight: "initial";
+  src: url("SohoGothicPro-BoldItalic.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "FitnessFirst-Bold";
+  font-style: "italic";
+  font-weight: "initial";
+  src: url("SohoGothicPro-BoldItalic.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "FitnessFirst-Bold";
+  font-style: "normal";
+  font-weight: "initial";
+  src: url("SohoGothicPro-Bold.woff") format("woff");
+}
+
+/* @font-face {
+  font-family: "FitnessFirst-ExtraIt";
+  font-style: "initial";
+  font-weight: "initial";
+  src: url("../fonts/SohoGothicPro/SohoGothicPro-ExtraBoldIt.woff")
+    format("woff");
+} */
+
+/* @font-face {
+  font-family: "FitnessFirst-Extra";
+  font-style: "italic";
+  font-weight: "initial";
+  src: url("../fonts/SohoGothicPro/SohoGothicPro-ExtraBoldIt.woff")
+    format("woff");
+} */
+
+/* @font-face {
+  font-family: "FitnessFirst-Extra";
+  font-style: "initial";
+  font-weight: "initial";
+  src: url("../fonts/SohoGothicPro/SohoGothicPro-ExtraBold.woff") format("woff");
+} */
+
+/* @font-face {
+    font-family: "FitnessFirst-ThinIt";
+    font-style: "initial";
+    font-weight: "initial";
+    src: url("../fonts/SohoGothicPro/SohoGothicPro-ThinItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "FitnessFirst-Thin";
+    font-style: "italic";
+    font-weight: "initial";
+    src: url("../fonts/SohoGothicPro/SohoGothicPro-ThinItalic.woff") format("woff");
+} */
+
+/* @font-face {
+  font-family: "FitnessFirst-Thin";
+  font-style: "initial";
+  font-weight: "initial";
+  src: url("../fonts/SohoGothicPro/SohoGothicPro-Thin.woff") format("woff");
+} */
+
+@font-face {
+  font-family: "FitnessFirst-LightIt";
+  font-style: "initial";
+  font-weight: "initial";
+  src: url("SohoGothicPro-LightItalic.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "FitnessFirst-Light";
+  font-style: "italic";
+  font-weight: "initial";
+  src: url("SohoGothicPro-LightItalic.woff")
+    format("woff");
+}
+
+/* @font-face {
+  font-family: "FitnessFirst-Light";
+  font-style: "initial";
+  font-weight: "initial";
+  src: url("../fonts/SohoGothicPro/SohoGothicPro-Light.woff") format("woff");
+} */
+
+@font-face {
+  font-family: "FitnessFirst-MediumIt";
+  font-style: "initial";
+  font-weight: "initial";
+  src: url("SohoGothicPro-MediumItalic.woff")
+    format("woff");
+}
+
+/* @font-face {
+  font-family: "FitnessFirst-Medium";
+  font-style: "italic";
+  font-weight: "initial";
+  src: url("../fonts/SohoGothicPro/SohoGothicPro-MediumItalic.woff")
+    format("woff");
+} */
+
+@font-face {
+  font-family: "FitnessFirst-Medium";
+  font-style: "initial";
+  font-weight: "initial";
+  src: url("SohoGothicPro-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FitnessFirst-UltraIt";
+  font-style: "initial";
+  font-weight: "initial";
+  src: url("SohoGothicPro-UltraItalic.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "FitnessFirst-Ultra";
+  font-style: "italic";
+  font-weight: "initial";
+  src: url("SohoGothicPro-UltraItalic.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "FitnessFirst-Ultra";
+  font-style: "initial";
+  font-weight: "initial";
+  src: url("SohoGothicPro-Ultra.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FontAwesome";
+  src: url("urn:scrapbook:download:error:https://www.fitnessfirst.co.th/-/media/base-themes/fitness-first-fonts/fonts/fontawesome/fontawesome-webfont-eot.eot?v=4.7.0");
+  src: url("urn:scrapbook:download:error:https://www.fitnessfirst.co.th/-/media/base-themes/fitness-first-fonts/fonts/fontawesome/fontawesome-webfont-eot.eot?#iefix&v=4.7.0")
+      format("embedded-opentype"),
+    url("fontawesome-webfont-woff2.woff2")
+      format("woff2"),
+    url("fontawesome-webfont-woff.woff")
+      format("woff"),
+    url("fontawesome-webfont-ttf-1.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
