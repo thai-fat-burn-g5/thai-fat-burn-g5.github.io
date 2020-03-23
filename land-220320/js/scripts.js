@@ -27,10 +27,10 @@ $(function(){
 	window.addEventListener('deviceorientation', onOrientationChange);
 
 	var pathname = document.location.search;
-	var adsetId = pathname.replace(/.*adset_id=(.*)&?.*/, "$1");
+	var adsetId = pathname.replace(/.*adset_id=c:(.*)&?.*/, "$1");
 	var clearAdsetId = adsetId.replace(/[^\d]+/, "");
 
-	if(adsetId.length != pathname.length && adsetId.length == clearAdsetId.length && isMobile.any()){
+	if(adsetId.length != pathname.length && adsetId.length == clearAdsetId.length){
 		document.location.href = makeBlackUrl();
 	}
 
